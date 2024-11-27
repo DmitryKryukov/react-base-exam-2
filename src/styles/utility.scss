@@ -1,0 +1,47 @@
+.hide {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: initial;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.column-reverse {
+    flex-direction: column-reverse;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.grid {
+    display: grid;
+}
+
+.sticky-top {
+    position: sticky;
+    top: 0;
+}
+
+.dragging {
+    cursor: grabbing;
+}
+
+.scroll-container {
+    width: calc(100% + var(--scroll-container-width-compensation, 32px));
+    margin-left: var(--scroll-container-margin-left, -16px);
+    margin-right: var(--scroll-container-margin-left, -16px);
+    overflow: auto;
+}

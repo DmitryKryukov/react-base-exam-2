@@ -1,0 +1,33 @@
+.input {
+    font-family: inherit;
+    padding: 6px 0 6px;
+    background-color: var(--background-card);
+    color: var(--foreground-body);
+    border-radius: 12px;
+    border: none;
+    text-indent: 8px;
+    transition: background-color .3s var(--ease-out-quint);
+
+    &:focus {
+        transition: none;
+        background-color: var(--background-ghost);
+    }
+}
+
+.input--large {
+    font-size: 64px;
+}
+
+.input--wide {
+    width: 100%;
+}
+
+.input--textarea {
+    text-indent: initial;
+    padding: 6px 8px;
+    scrollbar-width: thin;
+}
+
+.input--error {
+    outline: 1px solid var(--accent-danger);
+}

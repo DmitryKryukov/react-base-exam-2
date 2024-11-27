@@ -1,0 +1,59 @@
+.button {
+    position: relative;
+    display: flex;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.button--add-expense {
+    --shortcut-right: 60px;
+    justify-content: space-between;
+    background-color: var(--background-base);
+    color: var(--accent-primary);
+    border-radius: 28px 28px 0 0;
+    border-bottom: 1px solid var(--background-ghost);
+    box-shadow: 0 -32px 0 var(--background-body);
+    text-align: left;
+    z-index: 1;
+    transition: background-color var(--ease-out-quint) .3s;
+
+    &:hover,
+    &:focus {
+        background-color: var(--background-card);
+        transition: none;
+    }
+}
+
+.button--wide {
+    width: 100%;
+}
+
+.button--primary {
+    justify-content: center;
+    padding: 12px 32px;
+    background-color: var(--accent-primary);
+    color: var(--foreground-light-const);
+    transition: filter .3s var(--ease-out-quint);
+
+    &:hover,
+    &:focus {
+        transition: none;
+        filter: brightness(.8) contrast(1.2);
+    }
+}
+
+.button__shortcut {
+    position: absolute;
+    right: var(--shortcut-right, 16px);
+    top: 50%;
+    translate: 0 -50%;
+    pointer-events: none;
+}
+
+.button--expense-action {
+    padding: 0;
+    opacity: .5;
+}

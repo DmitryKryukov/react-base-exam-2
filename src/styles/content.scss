@@ -1,0 +1,49 @@
+.main-wrapper {
+    min-height: 100lvh;
+}
+
+.main-content-wrapper {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    padding: 12px 12px 0;
+
+    @media (max-width: 1150px) {
+        padding-top: 0;
+    }
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: min(500px, 100%);
+    min-height: 100%;
+    background-color: var(--background-base);
+    border-radius: 28px 28px 0 0;
+}
+
+.zero-state {
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px 16px;
+    flex: 1;
+    gap: 16px;
+    color: var(--foreground-muted);
+}
+
+.zero-state__title {
+    margin-top: -4px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.main-content:has(.zero-state) {
+    .button--add-expense {
+        border-bottom: none;
+    }
+}
+
+.main-header__expense-groups-set {
+    gap: 8px;
+}

@@ -1,0 +1,68 @@
+.chip__input {
+    appearance: none;
+    display: none;
+}
+
+.chip {
+    position: relative;
+    padding: 6px 8px;
+    background-color: var(--background-card);
+    border-radius: 12px;
+    font-size: 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover {
+        background-color: var(--background-ghost);
+    }
+}
+
+.chip--vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 12px 12px;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.chip--vertical .chip__icon {
+    width: 32px;
+    height: 32px;
+}
+
+.chip:has(.chip__input:checked) {
+    background-color: var(--background-ghost);
+    color: var(--active-color, var(--foreground-body));
+    cursor: initial;
+}
+
+.chip--expense:has(.chip__input:checked) {
+    filter: contrast(1.15) saturate(1.15);
+}
+
+.chip--expense:has(.chip__input:checked)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--active-color, #333);
+    opacity: 0.2;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .chip--expense:has(.chip__input:checked) {
+        filter: contrast(1.35);
+
+        &::after {
+            background-color: var(--active-color, #afafaf);
+            opacity: .3;
+            mix-blend-mode: color-dodge;
+        }
+    }
+}
